@@ -34,9 +34,12 @@ RSpec.describe 'Calculate' do
       expect(calculate.division(15, 2)).to eq(result)
     end
 
-    it 'return error if number equal 0' do
-      result = calculate.division(0, 8)
-      expect(calculate.division(0, 8)).to be_nil
+    it 'return null if num_b equal 0' do
+      expect(calculate.division(8, 0)).to be_nil
+    end
+
+    it 'return 0 if num_a equal 0' do
+      expect(calculate.division(0, 8)).to be(0)
     end
   end
 end

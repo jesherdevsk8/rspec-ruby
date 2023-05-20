@@ -19,6 +19,6 @@ class Calculate
   end
 
   def division(num_a, num_b)
-    num_a / num_b unless num_a.zero? || num_b.zero?
+    num_a / num_b unless num_b.zero?
   end
 end
