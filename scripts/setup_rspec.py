@@ -11,7 +11,8 @@ def banner():
                                                                                                                                                           
 ''')
 
-def silly_framework():    
+def main():
+    banner()
     directories = [ 'lib', 'scripts' ]
 
     for dir in directories:
@@ -46,6 +47,5 @@ def run():
         os.system(cmd)
 
 if __name__ == "__main__":
-    banner()
-    silly_framework()
+    main()
     run()
