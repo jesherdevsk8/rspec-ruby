@@ -1,7 +1,5 @@
 class Calculate
-  # attr_reader :num_a, :num_b
-
-  def self.initialize(num_a, num_b)
+  def initialize(num_a, num_b)
     @num_a = num_a
     @num_b = num_b
   end

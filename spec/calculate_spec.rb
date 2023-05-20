@@ -1,7 +1,7 @@
 require 'Calculate'
 
 RSpec.describe 'Calculate' do
-  let(:calculate) { Calculate.new }
+  let(:calculate) { Calculate.new(2, 2) }
 
   context '#addition' do
     it 'sum numbers' do
