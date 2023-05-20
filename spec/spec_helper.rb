@@ -1,6 +1,12 @@
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-# Dir[File.join('lib', '*.rb')].each { |file| require file }
+require 'simplecov'
+
+SimpleCov.start do
+  add_group 'Libs', 'lib'
+
+  add_filter 'spec'
+end
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
