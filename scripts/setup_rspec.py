@@ -13,7 +13,7 @@ def banner():
 
 def main():
     banner()
-    directories = [ 'lib', 'scripts' ]
+    directories = [ 'lib', 'scripts', 'bin' ]
 
     for dir in directories:
         os.makedirs(dir)
@@ -24,21 +24,14 @@ def main():
         file         = os.path.join(current_path, file_name)
         dest_path    = os.path.join(current_path, directories[1], file_name)
 
-        os.rename(file_name, dest_path)
+        if os.path.exists(file_name):
+            os.rename(file_name, dest_path)
 
     with open('.ruby-version', 'w') as arquivo:
-        arquivo.write('''\
-3.2.0
-''')
+        arquivo.write('3.2.0\n')
 
     with open('Gemfile', 'w') as arquivo:
-        arquivo.write('''\
-source 'https://rubygems.org'
-
-ruby '~> 3.2'
-
-gem 'rspec', '~> 3.12'
-''')
+        arquivo.write("source 'https://rubygems.org'\n\nruby '~> 3.2'\n\ngem 'rspec', '~> 3.12'\n")
 
 def run():
     command = ['bundle install', 'rspec --init']
